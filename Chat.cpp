@@ -2,7 +2,6 @@
 #include <string.h>
 #include "Chat.h"
 
-
 Chat::Chat()
 {
     data_count = 0;
@@ -39,14 +38,14 @@ void Chat::resize()
     delete[] save_ct;
 }
 
-// хеш-функция для хеш-таблицы составленная методом умножения
+// ГµГҐГё-ГґГіГ­ГЄГ¶ГЁГї Г¤Г«Гї ГµГҐГё-ГІГ ГЎГ«ГЁГ¶Г» Г±Г®Г±ГІГ ГўГ«ГҐГ­Г­Г Гї Г¬ГҐГІГ®Г¤Г®Г¬ ГіГ¬Г­Г®Г¦ГҐГ­ГЁГї
 int Chat::hash_func(int val)
 {
     const double A = 0.7;
     return int(mem_size * (A * val - int(A * val)));
 }
 
-// хэш-функция квадратичного пробирования
+// ГµГЅГё-ГґГіГ­ГЄГ¶ГЁГї ГЄГўГ Г¤Г°Г ГІГЁГ·Г­Г®ГЈГ® ГЇГ°Г®ГЎГЁГ°Г®ГўГ Г­ГЁГї
 int Chat::hash_func_table(char login[LOGINLENGTH], int offset)
 {
     int sum = 0;
